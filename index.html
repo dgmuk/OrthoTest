@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Готовый план похудения на 5 кг за месяц | Body Balance</title>
+    <meta name="description"
+        content="Пошаговый план похудения на 3-5 кг за месяц. Калькулятор КБЖУ, программа тренировок, схема питания и БАДы. Научный подход к снижению веса без голодовок.">
+    <meta name="keywords"
+        content="похудение, план похудения, КБЖУ калькулятор, тренировки для похудения, дефицит калорий, убрать живот">
+    <meta name="author" content="Body Balance System">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Готовый план похудения на 3-5 кг за месяц">
+    <meta property="og:description"
+        content="Пошаговый план: калькулятор КБЖУ, программа тренировок и схема питания. Научный подход без голодовок.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ru_RU">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="План похудения на 3-5 кг за месяц">
+    <meta name="twitter:description" content="Пошаговый план: калькулятор КБЖУ, программа тренировок и схема питания.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            900: '#111827', // Глубокий серый (фон)
+                            800: '#1F2937', // Графитовый (карточки)
+                            700: '#374151', // Стальной (рамки)
+                            300: '#D1D5DB', // Светло-серый (текст)
+                        },
+                        orange: {
+                            500: '#F97316', // Фирменный оранжевый
+                            600: '#EA580C', // Темно-оранжевый
+                        },
+                        green: {
+                            500: '#22C55E', // Успех
+                        },
+                        red: {
+                            600: '#DC2626', // Опасно
+                        },
+                        teal: {
+                            500: '#14B8A6', // Бирюзовый
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4B5563;
+        }
+
+        /* Hide scrollbar for slider but allow scrolling */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Класс для интерактивных блоков */
+        .interactive-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #374151;
+        }
+
+        .interactive-card:hover {
+            transform: scale(1.02);
+            border-color: #14B8A6;
+            box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.2);
+        }
+
+        /* Классы для анимации появления при скролле */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Анимация парения для значка */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ===== ПРОГРЕСС-БАР ЧТЕНИЯ ===== */
+        #readingProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #F97316, #EF4444, #F97316);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+            z-index: 100;
+            transition: width 0.1s linear;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* ===== STICKY НАВИГАЦИЯ ===== */
+        #stickyNav {
+            position: fixed;
+            top: -80px;
+            left: 0;
+            right: 0;
+            z-index: 90;
+            transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(17, 24, 39, 0.85);
+            border-bottom: 1px solid rgba(55, 65, 81, 0.5);
+        }
+
+        #stickyNav.visible {
+            top: 3px;
+            /* под прогресс-баром */
+        }
+
+        #stickyNav .nav-link {
+            position: relative;
+            color: #9CA3AF;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        #stickyNav .nav-link:hover {
+            color: #F97316;
+            background: rgba(249, 115, 22, 0.1);
+        }
+
+        #stickyNav .nav-link.active {
+            color: #F97316;
+            background: rgba(249, 115, 22, 0.15);
+        }
+
+        /* ===== КНОПКА НАВЕРХ ===== */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 80;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F97316, #EA580C);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        #scrollTopBtn.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #scrollTopBtn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+        }
+
+        /* ===== GLOW ДЛЯ CTA ===== */
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(249, 115, 22, 0.3), 0 0 40px rgba(249, 115, 22, 0.1);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(249, 115, 22, 0.5), 0 0 60px rgba(249, 115, 22, 0.2);
+            }
+        }
+
+        .cta-glow {
+            animation: glow 2.5s ease-in-out infinite;
+        }
+
+        /* ===== HERO ФОНОВЫЕ ЭФФЕКТЫ ===== */
+        .hero-bg {
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 80%, rgba(239, 68, 68, 0.06) 0%, transparent 50%),
+                #1F2937;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: orbFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(20px, -30px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-15px, 15px) scale(0.95);
+            }
+        }
+
+        /* ===== ВОЛНОВОЙ РАЗДЕЛИТЕЛЬ ===== */
+        .section-divider {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        @keyframes waveMotion {
+
+            0%,
+            100% {
+                transform: translateY(0) scaleY(1);
+            }
+
+            50% {
+                transform: translateY(8px) scaleY(1.08);
+            }
+        }
+
+        .section-divider svg {
+            position: absolute;
+            bottom: -1px;
+            /* Чуть прижмем вниз, чтобы убрать возможные щели */
+            width: 100%;
+            height: 80px;
+            animation: waveMotion 8s ease-in-out infinite;
+            transform-origin: bottom;
+            filter: drop-shadow(0 -5px 10px rgba(0, 0, 0, 0.1));
+        }
+
+        /* ===== DOTS ПАГИНАЦИЯ СЛАЙДЕРА ===== */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #374151;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+        }
+
+        .slider-dot.active {
+            background: #14B8A6;
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* ===== БЖУ ВИЗУАЛЬНЫЕ БАРЫ ===== */
+        .macro-bar {
+            height: 6px;
+            border-radius: 3px;
+            background: #1F2937;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .macro-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            width: 0%;
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== COUNTER АНИМАЦИЯ ===== */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .count-animate {
+            animation: countUp 0.5s ease-out;
+        }
+
+        /* ===== TAB SLIDE АНИМАЦИЯ ===== */
+        .tab-slide-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-content {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .tab-content.hidden {
+            opacity: 0;
+            position: absolute;
+            transform: translateX(20px);
+            pointer-events: none;
+        }
+
+        .tab-content.active-tab {
+            opacity: 1;
+            position: relative;
+            transform: translateX(0);
+        }
+
+        .tab-progress {
+            height: 3px;
+            background: #374151;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .tab-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F97316, #EF4444);
+            border-radius: 2px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== STAGGER REVEAL ===== */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== STAT COUNTER ===== */
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            background: rgba(31, 41, 55, 0.6);
+            border: 1px solid #374151;
+            transition: all 0.4s;
+        }
+
+        .stat-card:hover {
+            border-color: #14B8A6;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F97316, #EF4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== БЕГУЩАЯ СТРОКА ===== */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 20s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-wrapper {
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+        }
+
+        /* ===== PULSE BADGE ===== */
+        @keyframes pulseBadge {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+            }
+        }
+
+        .pulse-badge {
+            animation: pulseBadge 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 antialiased leading-relaxed overflow-x-hidden">
+
+    <!-- ПРОГРЕСС-БАР ЧТЕНИЯ -->
+    <div id="readingProgress"></div>
+
+    <!-- STICKY НАВИГАЦИЯ -->
+    <nav id="stickyNav">
+        <div class="max-w-4xl mx-auto px-4 py-2 flex items-center justify-between">
+            <a href="#" class="text-white font-bold text-sm flex items-center gap-2">
+                <span class="text-lg">🔥</span> Body Balance
+            </a>
+            <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide">
+                <a href="#step1" class="nav-link" data-section="step1">Цель</a>
+                <a href="#step2" class="nav-link" data-section="step2">Замеры</a>
+                <a href="#step3" class="nav-link" data-section="step3">Питание</a>
+                <a href="#step4" class="nav-link" data-section="step4">Тренировки</a>
+                <a href="#step5" class="nav-link" data-section="step5">Практика</a>
+                <a href="https://dgmuk.github.io/pagepr/"
+                    class="ml-2 px-3 py-1.5 bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold rounded-lg transition-colors whitespace-nowrap">Записаться</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- БЛОК 1: Шапка (Hero) -->
+    <header class="relative overflow-hidden hero-bg">
+        <!-- Фоновые эффекты -->
+        <div class="hero-grid"></div>
+        <div class="hero-orb" style="width: 200px; height: 200px; background: #F97316; top: 10%; left: 5%;"></div>
+        <div class="hero-orb"
+            style="width: 150px; height: 150px; background: #14B8A6; bottom: 10%; right: 10%; animation-delay: -3s;">
+        </div>
+
+        <div class="relative max-w-3xl mx-auto px-4 py-16 sm:py-24 text-center reveal">
+            <span
+                class="animate-float inline-block py-1.5 px-4 rounded-full bg-gray-700/80 text-orange-500 text-xs font-bold tracking-widest mb-6 backdrop-blur-sm border border-gray-600/50">🔥
+                РУКОВОДСТВО</span>
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                УЗНАЙ КАК ПОХУДЕТЬ НА <span
+                    class="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">3-5
+                    КГ</span>
+                ВСЕГО ЗА 1 МЕСЯЦ, УБРАТЬ ЖИВОТ И БОКА НАВСЕГДА
+            </h1>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                Приятного чтения, а перед этим — проверь свою подписку на мой Телеграмм канал! В нем я делюсь важными
+                советами по снижению веса и достижению желаемой формы.
+            </p>
+            <a href="https://t.me/BodyBal"
+                class="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl hover:from-orange-600 hover:to-red-500 transition-all shadow-lg shadow-orange-500/25 transform hover:-translate-y-1 hover:shadow-orange-500/40">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                </svg>
+                Телеграмм канал!
+            </a>
+        </div>
+    </header>
+
+    <!-- Разделитель: Hero → Контент -->
+    <div class="section-divider" style="background: #1F2937;">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="#111827">
+            <path d="M0,20 C240,60 480,0 720,40 C960,80 1200,20 1440,50 L1440,80 L0,80 Z"></path>
+        </svg>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-4 py-10 space-y-12">
+
+        <!-- БЛОК 2: Введение -->
+        <section class="space-y-4 reveal">
+            <p class="text-lg px-2">
+                В этой статье ты получишь пошаговый <span class="text-white font-bold">ПЛАН ДЕЙСТВИЙ</span> и <span
+                    class="text-white font-bold">ПРАКТИЧЕСКИЕ РЕКОМЕНДАЦИИ</span>. С их помощью ты сможешь:
+            </p>
+            <!-- Интерактивный блок -->
+            <ul class="interactive-card space-y-3 bg-gray-800 p-6 rounded-2xl shadow-sm stagger-group">
+                <li class="flex items-start stagger-item">
+                    <svg class="w-6 h-6 text-green-500 mr-3 shrink-0" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Убрать живот и бока;</span>
+                </li>
+                <li class="flex items-start stagger-item">
+                    <svg class="w-6 h-6 text-green-500 mr-3 shrink-0" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Улучшить самочувствие и продуктивность;</span>
+                </li>
+                <li class="flex items-start stagger-item">
+                    <svg class="w-6 h-6 text-green-500 mr-3 shrink-0" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Носить одежду, которая нравится, а не ту, которая подошла.</span>
+                </li>
+            </ul>
+            <p class="px-2">При этом не придется мучать себя изнурительными тренировками и сидеть на изматывающих
+                диетах. Теперь перейдем к делу..</p>
+        </section>
+
+        <!-- БЛОК 3: Агитация -->
+        <section class="interactive-card bg-gray-800 rounded-2xl p-6 border-l-4 border-orange-500 reveal">
+            <p class="text-lg font-medium text-white italic mb-6">
+                "Скажи, как тебе идея: Всего за месяц избавиться от 5 кг жира, следуя проверенной схеме? При этом
+                сохранить мышечную массу, повысить силовые и выносливость! Шаг за шагом, ты сможешь сделать результат.
+                Мысль неплохая, ВЕРНО?"
+            </p>
+            <h3 class="text-xl font-bold text-white mb-4">Еще из этой статьи ты узнаешь:</h3>
+            <ul class="space-y-2 mb-6 stagger-group">
+                <li class="flex items-start gap-2 stagger-item">
+                    <span class="text-teal-500 font-bold">✔️</span>
+                    Как легко самому рассчитать свою норму по питанию и начать худеть на любимых продуктах;
+                </li>
+                <li class="flex items-start gap-2 stagger-item">
+                    <span class="text-teal-500 font-bold">✔️</span>
+                    Как правильно построить свои тренировки, чтобы уходил жир и оставались мышцы;
+                </li>
+                <li class="flex items-start gap-2 stagger-item">
+                    <span class="text-teal-500 font-bold">✔️</span>
+                    Пример реальной тренировки (видео);
+                </li>
+                <li class="flex items-start gap-2 stagger-item">
+                    <span class="text-teal-500 font-bold">✔️</span>
+                    Рабочую схему приемы БАДов для мощного сжигания жира.
+                </li>
+            </ul>
+            <div class="bg-gray-900/50 p-4 rounded-lg border border-teal-500/30">
+                <p class="font-bold text-teal-400">💡 И главное: Как все это соединить в систему, чтобы уже через месяц
+                    похудеть на 5 кг.</p>
+            </div>
+        </section>
+
+        <!-- БЛОК 4: Авторитет (Кейсы / Слайдер) -->
+        <section class="space-y-6 reveal">
+            <h3 class="text-2xl font-bold text-white px-2">Почему стоит доверять моим советам?</h3>
+            <p class="px-2">
+                За годы работы я помог десяткам клиентов сбросить вес, улучшить фигуру и, что самое важное, сохранить
+                полученные результаты. Мои подопечные добивались целей благодаря научному подходу к тренировкам и
+                питанию, который я разработал на основе своего опыта и глубоких знаний.
+            </p>
+            <p class="font-semibold text-white px-2">Вот лишь несколько примеров результатов подопечных:</p>
+
+            <!-- Слайдер кейсов -->
+            <div class="relative group">
+                <!-- Кнопка Влево -->
+                <button onclick="scrollCases(-1)"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-900/80 hover:bg-orange-500 text-white p-2 rounded-full shadow-lg backdrop-blur-sm transition-all sm:opacity-0 sm:group-hover:opacity-100 -ml-2 sm:-ml-4 border border-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Контейнер слайдера -->
+                <div id="casesSlider"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide space-x-4 p-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+
+                    <!-- Слайд 1 -->
+                    <div
+                        class="flex-shrink-0 w-72 sm:w-80 snap-center interactive-card aspect-[4/5] bg-gray-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <img src="https://i.postimg.cc/Y0FTPfx4/gotovoe-kopia.jpg" alt="Результат 1"
+                            class="object-contain w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="absolute bottom-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-xs font-bold text-teal-500 border border-teal-500/30">-
+                            30 кг за 1 год</span>
+                    </div>
+
+                    <!-- Слайд 2 -->
+                    <div
+                        class="flex-shrink-0 w-72 sm:w-80 snap-center interactive-card aspect-[4/5] bg-gray-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <img src="https://i.postimg.cc/ydyZy2MZ/do-posle-1.jpg" alt="Результат 2"
+                            class="object-contain w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="absolute bottom-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-xs font-bold text-teal-500 border border-teal-500/30">-
+                            15 кг за 5 месяцев</span>
+                    </div>
+
+                    <!-- Слайд 3 -->
+                    <div
+                        class="flex-shrink-0 w-72 sm:w-80 snap-center interactive-card aspect-[4/5] bg-gray-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <img src="https://i.postimg.cc/nLkFRZLV/gotovoe-kopia.jpg" alt="Результат 3"
+                            class="object-contain w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="absolute bottom-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-xs font-bold text-teal-500 border border-teal-500/30">Ушел
+                            живот</span>
+                    </div>
+
+                    <!-- Слайд 4 -->
+                    <div
+                        class="flex-shrink-0 w-72 sm:w-80 snap-center interactive-card aspect-[4/5] bg-gray-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <img src="https://i.postimg.cc/X7SvYsmP/Peredel.jpg" alt="Результат 4"
+                            class="object-contain w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="absolute bottom-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-xs font-bold text-teal-500 border border-teal-500/30">рельеф
+                            и мышцы</span>
+                    </div>
+
+                    <!-- Слайд 5 -->
+                    <div
+                        class="flex-shrink-0 w-72 sm:w-80 snap-center interactive-card aspect-[4/5] bg-gray-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <img src="https://i.postimg.cc/j5HFQdqn/gotovoe-kopia.jpg" alt="Результат 5"
+                            class="object-contain w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="absolute bottom-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-xs font-bold text-teal-500 border border-teal-500/30">-4
+                            кг без голода</span>
+                    </div>
+
+                    <!-- Слайд 6 -->
+                    <div
+                        class="flex-shrink-0 w-72 sm:w-80 snap-center interactive-card aspect-[4/5] bg-gray-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <img src="https://i.postimg.cc/tJz8yRLX/gotovoe.jpg" alt="Результат 6"
+                            class="object-contain w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="absolute bottom-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-xs font-bold text-teal-500 border border-teal-500/30">Подготовка
+                            к лету</span>
+                    </div>
+
+                    <!-- Слайд 7 -->
+                    <div
+                        class="flex-shrink-0 w-72 sm:w-80 snap-center interactive-card aspect-[4/5] bg-gray-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <img src="https://i.postimg.cc/2jX49Nq3/gotovoe.jpg" alt="Результат 7"
+                            class="object-contain w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="absolute bottom-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-xs font-bold text-teal-500 border border-teal-500/30">Восстановление</span>
+                    </div>
+
+                </div>
+
+                <!-- Кнопка Вправо -->
+                <button onclick="scrollCases(1)"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-900/80 hover:bg-orange-500 text-white p-2 rounded-full shadow-lg backdrop-blur-sm transition-all sm:opacity-0 sm:group-hover:opacity-100 -mr-2 sm:-mr-4 border border-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Dots пагинация -->
+            <div id="sliderDots" class="slider-dots"></div>
+            <p class="text-center text-sm text-gray-400 mt-2">Все они добились успеха, вы также можете, читайте статью
+                далее 🧾</p>
+        </section>
+
+        <!-- БЛОК: Социальное доказательство (Статистика) -->
+        <section class="reveal">
+            <div class="grid grid-cols-3 gap-3 sm:gap-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">клиентов</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="95" data-suffix="%">0</div>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">достигли цели</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="10" data-suffix=" лет">0</div>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">опыта</p>
+                </div>
+            </div>
+            <!-- Бегущая строка -->
+            <div class="marquee-wrapper rounded-xl bg-gray-800/50 py-2 border border-gray-700/50">
+                <div class="marquee-track">
+                    <span class="px-6 text-sm text-gray-500">🏆 -30 кг за год</span>
+                    <span class="px-6 text-sm text-gray-500">💪 -15 кг за 5 мес</span>
+                    <span class="px-6 text-sm text-gray-500">🔥 Ушёл живот</span>
+                    <span class="px-6 text-sm text-gray-500">✨ Рельеф и мышцы</span>
+                    <span class="px-6 text-sm text-gray-500">🎯 -4 кг без голода</span>
+                    <span class="px-6 text-sm text-gray-500">⚡ Подготовка к лету</span>
+                    <span class="px-6 text-sm text-gray-500">🏆 -30 кг за год</span>
+                    <span class="px-6 text-sm text-gray-500">💪 -15 кг за 5 мес</span>
+                    <span class="px-6 text-sm text-gray-500">🔥 Ушёл живот</span>
+                    <span class="px-6 text-sm text-gray-500">✨ Рельеф и мышцы</span>
+                    <span class="px-6 text-sm text-gray-500">🎯 -4 кг без голода</span>
+                    <span class="px-6 text-sm text-gray-500">⚡ Подготовка к лету</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 5: Подводка (Мифы) -->
+        <section class="space-y-4 reveal">
+            <p class="px-2">Итак, с чего начинается твой путь к потере веса?</p>
+            <div class="space-y-2 px-2">
+                <p class="flex items-center text-white"><span class="text-red-600 mr-2 text-xl font-bold">❌</span> Нет,
+                    это не с попытки срочно сесть на жёсткую диету.</p>
+                <p class="flex items-center text-white"><span class="text-red-600 mr-2 text-xl font-bold">❌</span> И не
+                    с покупки самых модных БАДов или фитнес-гаджетов.</p>
+                <p class="flex items-center text-white"><span class="text-red-600 mr-2 text-xl font-bold">❌</span> И
+                    даже не с мысли «я начну бегать каждое утро и похудею».</p>
+            </div>
+            <p class="px-2">Забудь о случайных решениях – у процесса похудения есть своя чёткая и логичная система.</p>
+            <div class="interactive-card bg-gray-800 p-6 rounded-2xl border-l-4 border-teal-500">
+                <p><strong>💡 Аналогия:</strong> Ты ведь не придумываешь новые способы делать приседания или тяги,
+                    правда? Ты следуешь проверенной технике. Точно так же и с похудением – здесь тоже есть «правильная
+                    техника», которой я сейчас с тобой поделюсь.</p>
+            </div>
+        </section>
+
+        <!-- Разделитель: Мифы → Шаги -->
+        <div class="relative h-px">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-teal-500/40 to-transparent"></div>
+        </div>
+
+        <!-- БЛОК 6: ШАГ 1 - Цель -->
+        <section id="step1" class="interactive-card bg-gray-800 rounded-2xl p-6 sm:p-8 reveal">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">1 ШАГ - ПОСТАНОВКА ЦЕЛИ</h2>
+                <span class="text-4xl">🎯</span>
+            </div>
+            <h3 class="text-lg text-teal-400 mb-4 font-semibold">☑️ Четкая и адекватная постановка цели</h3>
+            <p class="mb-4">
+                Первое, с чего начинается любое изменение, – это правильная постановка цели. Задача – не просто сбросить
+                5 кг, а понять, зачем тебе это нужно. Цель должна быть конкретной, измеримой и реалистичной.
+            </p>
+            <p class="mb-4 bg-gray-900/60 p-4 rounded-lg text-white border border-gray-700">
+                💡 Например, «снизить вес на 5 кг за 4 недели, улучшив качество тела и сохранив мышечную массу».
+            </p>
+            <p>Важно определить, какие результаты ты хочешь увидеть:</p>
+            <ul class="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-300">
+                <li>✅ Улучшение самочувствия;</li>
+                <li>✅ Уменьшение объема талии или живота;</li>
+                <li>✅ Подготовка к какому-то важному событию.</li>
+            </ul>
+        </section>
+
+        <!-- БЛОК 7: ШАГ 2 - Точка А -->
+        <section id="step2" class="interactive-card bg-gray-800 rounded-2xl p-6 sm:p-8 reveal">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">2 ШАГ - ФИКСИРУЕМ ТОЧКУ А</h2>
+                <span class="text-4xl">📏</span>
+            </div>
+            <p class="mb-6">
+                💡 Очень важно провести детальные замеры тела. Они станут твоим ориентиром для отслеживания прогресса.
+            </p>
+
+            <div class="grid gap-6 md:grid-cols-2">
+                <div
+                    class="bg-gray-900/60 p-6 rounded-xl border border-gray-700 hover:border-teal-500 transition-colors">
+                    <h4 class="font-bold text-white mb-2">1. Замеры окружностей</h4>
+                    <p class="text-sm mb-4">Сними основные мерки — обхват талии, бедер, груди, рук и ног.</p>
+                    <a href="https://sites.google.com/view/rezinki/"
+                        class="text-orange-500 font-bold hover:underline">👉 Инструкции по замерам ЗДЕСЬ</a>
+                    <p class="text-xs text-gray-500 mt-2">Делай раз в 1-2 недели.</p>
+                </div>
+                <div
+                    class="bg-gray-900/60 p-6 rounded-xl border border-gray-700 hover:border-teal-500 transition-colors">
+                    <h4 class="font-bold text-white mb-2">2. Фото прогресса</h4>
+                    <p class="text-sm mb-4">Три ракурса: спереди, сзади, сбоку. Одинаковый свет и одежда.</p>
+                    <p class="text-xs text-gray-500">Повторяй снимки каждые 2-3 недели.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 8: ШАГ 3 - Питание (Теория) -->
+        <section id="step3" class="interactive-card bg-gray-800 rounded-2xl p-6 sm:p-8 reveal">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">3 ШАГ - РАСЧЕТЫ ПО ПИТАНИЮ</h2>
+                <span class="text-4xl">🥗</span>
+            </div>
+            <p class="mb-6">
+                После сбора данных важно составить план питания для дефицита калорий. Действуй по следующим шагам ⬇️
+            </p>
+
+            <div class="space-y-4">
+                <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-700/30 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center font-bold text-white">
+                        1</div>
+                    <div>
+                        <h4 class="text-white font-bold">Определи калорийность поддержки</h4>
+                        <p class="text-sm">В течение 7 дней записывай всё, что съедаешь. Среднее значение за неделю
+                            (если вес не менялся) = твоя поддержка.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-700/30 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center font-bold text-white">
+                        2</div>
+                    <div>
+                        <h4 class="text-white font-bold">Установи дефицит</h4>
+                        <p class="text-sm">Уменьши калорийность поддержки на <span
+                                class="text-orange-500 font-bold">20%</span>.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-700/30 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center font-bold text-white">
+                        3</div>
+                    <div>
+                        <h4 class="text-white font-bold">Рассчитай БЖУ</h4>
+                        <ul class="text-sm space-y-2 mt-2 bg-gray-900/60 p-4 rounded border border-gray-700">
+                            <li>🥩 <strong>Белки:</strong> Вес × 1.8 г</li>
+                            <li>🥑 <strong>Жиры:</strong> Вес × 0.8 г</li>
+                            <li>🍚 <strong>Углеводы:</strong> Остаток калорий / 4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 9: Инструмент (Калькулятор) -->
+        <section
+            class="interactive-card bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 md:p-8 shadow-xl reveal">
+            <h3 class="text-2xl font-bold text-white mb-2">🧮 Калькулятор КБЖУ</h3>
+            <p class="mb-6 text-sm">Не хотите считать вручную? Занесите данные и получите расчет.</p>
+
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wide text-gray-400 mb-1">Ваш вес (кг)</label>
+                        <input type="number" id="calcWeight" placeholder="Например: 80" min="30" max="300"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wide text-gray-400 mb-1">Калории поддержки (за 7
+                            дней)</label>
+                        <input type="number" id="calcMaintenance" placeholder="Например: 2500" min="800" max="10000"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors">
+                        <p class="text-xs text-gray-500 mt-1">Если не знаете, введите примерный вес × 33</p>
+                    </div>
+                    <button onclick="calculateMacros()"
+                        class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-red-500 text-white font-bold py-3.5 rounded-lg transition-all shadow-lg hover:shadow-orange-500/30 mt-2 transform active:scale-95 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        Рассчитать план
+                    </button>
+                    <p id="errorMsg"
+                        class="text-red-500 text-sm hidden bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
+                    </p>
+                </div>
+
+                <div id="resultsPanel"
+                    class="hidden bg-gray-900 rounded-xl p-6 border border-gray-700 flex flex-col justify-center">
+                    <h4 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2">📋 Ваш план на день:
+                    </h4>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span>🔥 Калории (Дефицит):</span>
+                                <span class="text-xl font-bold text-orange-500 count-animate" id="resCals">0</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-gray-800"></div>
+                        <div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span>🥩 Белки (1.8г/кг):</span>
+                                <span class="font-bold text-teal-400 count-animate" id="resProtein">0 г</span>
+                            </div>
+                            <div class="macro-bar">
+                                <div class="macro-bar-fill" id="barProtein"
+                                    style="background: linear-gradient(90deg, #14B8A6, #0D9488)"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span>🥑 Жиры (0.8г/кг):</span>
+                                <span class="font-bold text-yellow-400 count-animate" id="resFat">0 г</span>
+                            </div>
+                            <div class="macro-bar">
+                                <div class="macro-bar-fill" id="barFat"
+                                    style="background: linear-gradient(90deg, #FBBF24, #F59E0B)"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span>🍚 Углеводы (Остаток):</span>
+                                <span class="font-bold text-blue-400 count-animate" id="resCarbs">0 г</span>
+                            </div>
+                            <div class="macro-bar">
+                                <div class="macro-bar-fill" id="barCarbs"
+                                    style="background: linear-gradient(90deg, #60A5FA, #3B82F6)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="copyResults()"
+                        class="mt-4 w-full py-2 text-sm font-medium text-gray-400 hover:text-white border border-gray-700 hover:border-teal-500 rounded-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+                            </path>
+                        </svg>
+                        <span id="copyBtnText">Скопировать результат</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 10: ШАГ 4 - Тренировки (Теория) -->
+        <section id="step4" class="interactive-card bg-gray-800 rounded-2xl p-6 sm:p-8 reveal">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">4 ШАГ - ПЛАН ТРЕНИРОВОК</h2>
+                <span class="text-4xl">🏋️‍♂️</span>
+            </div>
+            <p class="mb-6">Важно комбинировать нагрузки:</p>
+            <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                <div
+                    class="bg-gray-900/60 p-4 rounded-xl text-center border border-gray-700 hover:border-teal-500 transition-colors">
+                    <div class="text-3xl mb-2">💪</div>
+                    <h4 class="font-bold text-white">Силовые</h4>
+                    <p class="text-xs text-gray-400 mt-1">Сохраняют мышцы</p>
+                </div>
+                <div
+                    class="bg-gray-900/60 p-4 rounded-xl text-center border border-gray-700 hover:border-teal-500 transition-colors">
+                    <div class="text-3xl mb-2">🏃</div>
+                    <h4 class="font-bold text-white">Кардио</h4>
+                    <p class="text-xs text-gray-400 mt-1">Сжигает жир</p>
+                </div>
+                <div
+                    class="bg-gray-900/60 p-4 rounded-xl text-center border border-gray-700 hover:border-teal-500 transition-colors">
+                    <div class="text-3xl mb-2">🚶</div>
+                    <h4 class="font-bold text-white">Активность</h4>
+                    <p class="text-xs text-gray-400 mt-1">Движение каждый день</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 11: Программа (Интерактивные табы) -->
+        <section class="interactive-card bg-gray-800 rounded-2xl overflow-hidden reveal">
+            <div class="p-4 bg-gray-700/50 border-b border-gray-700">
+                <h3 class="text-xl font-bold text-white text-center">📅 Программа периодизации (4 недели)</h3>
+                <!-- Прогресс-бар недели -->
+                <div class="tab-progress mt-3">
+                    <div class="tab-progress-fill" id="tabProgress" style="width: 25%"></div>
+                </div>
+            </div>
+
+            <!-- Tabs Headers -->
+            <div class="flex overflow-x-auto border-b border-gray-700">
+                <button onclick="switchTab(1)" id="tab1"
+                    class="tab-btn flex-1 py-4 px-4 text-sm font-bold text-orange-500 border-b-2 border-orange-500 whitespace-nowrap bg-gray-800 transition-all flex items-center justify-center gap-1.5">
+                    <span class="text-base">🏋️‍♀️</span> <span class="hidden sm:inline">Неделя</span> 1
+                </button>
+                <button onclick="switchTab(2)" id="tab2"
+                    class="tab-btn flex-1 py-4 px-4 text-sm font-bold text-gray-400 border-b-2 border-transparent hover:text-white whitespace-nowrap transition-all flex items-center justify-center gap-1.5">
+                    <span class="text-base">🏋️‍♂️</span> <span class="hidden sm:inline">Неделя</span> 2
+                </button>
+                <button onclick="switchTab(3)" id="tab3"
+                    class="tab-btn flex-1 py-4 px-4 text-sm font-bold text-gray-400 border-b-2 border-transparent hover:text-white whitespace-nowrap transition-all flex items-center justify-center gap-1.5">
+                    <span class="text-base">🔄</span> <span class="hidden sm:inline">Неделя</span> 3
+                </button>
+                <button onclick="switchTab(4)" id="tab4"
+                    class="tab-btn flex-1 py-4 px-4 text-sm font-bold text-gray-400 border-b-2 border-transparent hover:text-white whitespace-nowrap transition-all flex items-center justify-center gap-1.5">
+                    <span class="text-base">🐢</span> <span class="hidden sm:inline">Неделя</span> 4
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="p-6 min-h-[200px] tab-slide-container">
+                <div id="content1" class="tab-content active-tab">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-red-500/20 text-sm">🔥</span>
+                        <h4 class="text-xl font-bold text-white">Кроссфит</h4>
+                        <span
+                            class="pulse-badge px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 text-xs font-bold">Жиросжигание</span>
+                    </div>
+                    <p class="mb-4">Упражнения с собственным весом или легким оборудованием.</p>
+                    <div class="bg-gray-900/50 p-3 rounded border border-red-500/20 text-sm">
+                        🍽️ <strong>Питание:</strong> Снижаем углеводы для усиления жиросжигания.
+                    </div>
+                </div>
+                <div id="content2" class="tab-content hidden">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500/20 text-sm">💪</span>
+                        <h4 class="text-xl font-bold text-white">Силовые в зале</h4>
+                        <span
+                            class="pulse-badge px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Набор
+                            силы</span>
+                    </div>
+                    <p class="mb-4">Тренажеры и свободные веса. 10 повторений в подходе.</p>
+                    <div class="bg-gray-900/50 p-3 rounded border border-green-500/20 text-sm">
+                        🍽️ <strong>Питание:</strong> +10% калорий за счет углеводов (энергия для силы).
+                    </div>
+                </div>
+                <div id="content3" class="tab-content hidden">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-500/20 text-sm">⚡</span>
+                        <h4 class="text-xl font-bold text-white">Круговые тренировки</h4>
+                        <span
+                            class="pulse-badge px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-400 text-xs font-bold">Выносливость</span>
+                    </div>
+                    <p class="mb-4">15-20 повторений, 3-4 круга. Между кругами — 3 мин кардио.</p>
+                    <div class="bg-gray-900/50 p-3 rounded border border-red-500/20 text-sm">
+                        🍽️ <strong>Питание:</strong> Снижаем калорийность на 10% (углеводы).
+                    </div>
+                </div>
+                <div id="content4" class="tab-content hidden">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-500/20 text-sm">🧘</span>
+                        <h4 class="text-xl font-bold text-white">Статодинамика</h4>
+                        <span
+                            class="pulse-badge px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-400 text-xs font-bold">Восстановление</span>
+                    </div>
+                    <p class="mb-4">Вес 40-50%, очень медленный темп (40-50 сек под нагрузкой). + Интервальное кардио.
+                    </p>
+                    <div class="bg-gray-900/50 p-3 rounded border border-green-500/20 text-sm">
+                        🍽️ <strong>Питание:</strong> +10% калорий (поддержка организма).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 12: ШАГ 5 - Практика -->
+        <section id="step5" class="interactive-card bg-gray-800 rounded-2xl p-6 sm:p-8 reveal">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">5 ШАГ - СХЕМА В ДЕЙСТВИИ</h2>
+                <span class="text-4xl">🎬</span>
+            </div>
+            <p class="mb-4">Возьмем для примера первую неделю: <strong>КРОССФИТ</strong>.</p>
+
+            <div class="bg-gray-900/60 p-5 rounded-xl mb-6 border-l-4 border-orange-500">
+                <h4 class="font-bold text-white mb-2">💊 Добавки перед тренировкой (для жиросжигания):</h4>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                    <li>Йохимбин: 0.2 мг на кг</li>
+                    <li>Кофеин: 100-200 мг</li>
+                    <li>Л-тирозин: 1-3 гр</li>
+                </ul>
+            </div>
+
+            <!-- Видео (Wistia Player) -->
+            <div class="rounded-xl overflow-hidden border border-gray-700 mb-2 shadow-xl relative aspect-video">
+                <!-- Замена скриптового плеера на безопасный Iframe, чтобы избежать ошибок CORS/Fetch -->
+                <iframe src="https://fast.wistia.net/embed/iframe/f8ttwklhpg" title="Video" allow="autoplay; fullscreen"
+                    allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed"
+                    msallowfullscreen width="100%" height="100%"
+                    style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+            </div>
+
+            <a href="https://vkvideo.ru/video391429675_456239157"
+                class="block text-center text-orange-500 text-sm font-bold hover:underline mb-6">Смотреть ВКонтакте
+                (резервная ссылка)</a>
+
+            <div class="bg-gray-900/60 p-4 rounded-xl border border-gray-700">
+                <p class="text-white font-bold mb-2">Рельеф и мышцы</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">☑️ Птица</span>
+                    <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">☑️ Рыба</span>
+                    <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">☑️ Яйца</span>
+                    <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">☑️ Творог</span>
+                    <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">☑️ Протеин</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 13: Переход к продаже -->
+        <section class="py-10 text-center space-y-4 reveal">
+            <h2 class="text-3xl font-bold text-white">ЧТО ДЕЛАТЬ ДАЛЕЕ?</h2>
+            <p class="text-gray-300">
+                Я бесплатно отдал тебе рабочую информацию. Но сможешь ли ты все внедрить сам без ошибок?
+            </p>
+            <div
+                class="inline-block text-left interactive-card bg-gray-800 p-6 rounded-2xl border border-gray-700 max-w-lg">
+                <p class="font-bold text-white mb-2">Всегда нужен человек, который:</p>
+                <ul class="space-y-2">
+                    <li>✅ Покажет, ЧТО и КАК нужно сделать конкретно тебе</li>
+                    <li>✅ В нужный момент даст ПИНОК</li>
+                    <li>✅ Убережет от ошибок</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Разделитель: Контент → Продающая часть -->
+    <div class="section-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="#1F2937">
+            <path d="M0,20 C240,60 480,0 720,40 C960,80 1200,20 1440,50 L1440,80 L0,80 Z"></path>
+        </svg>
+    </div>
+
+    <!-- ПРОДАЮЩАЯ ЧАСТЬ -->
+    <section class="bg-gray-800 py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- БЛОК 14: Оффер -->
+            <div class="text-center mb-12 reveal">
+                <span class="text-orange-500 font-bold tracking-widest uppercase text-sm">Тест-драйв системы</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-2 mb-6">
+                    7-дневный практикум<br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">«МЕТАБОЛИЧЕСКИЙ
+                        ЗАПУСК»</span>
+                </h2>
+                <p class="text-xl max-w-2xl mx-auto">
+                    Это не марафон, это «ремонт» твоего организма. Устраним причину жира на уровне гормонов.
+                </p>
+            </div>
+
+            <!-- БЛОК 15: Преимущества (Сетка) -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="interactive-card p-6 rounded-2xl bg-gray-900 flex gap-4 reveal">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-2xl">
+                        📱</div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Управление Инсулином</h4>
+                        <p class="text-sm mt-1">Меню, на котором сытно ешь, но жир горит. Приложение само считает КБЖУ.
+                        </p>
+                    </div>
+                </div>
+                <div class="interactive-card p-6 rounded-2xl bg-gray-900 flex gap-4 reveal">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-2xl">
+                        ⚡</div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Гормональные тренировки</h4>
+                        <p class="text-sm mt-1">Короткие комплексы (20 минут), чтобы поднять тестостерон.</p>
+                    </div>
+                </div>
+                <div class="interactive-card p-6 rounded-2xl bg-gray-900 flex gap-4 reveal">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-2xl">
+                        🧠</div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Снятие «ручника»</h4>
+                        <p class="text-sm mt-1">Разберемся с кортизолом, сном и «рептильным мозгом».</p>
+                    </div>
+                </div>
+                <div class="interactive-card p-6 rounded-2xl bg-gray-900 flex gap-4 reveal">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-2xl">
+                        🔍</div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Диагностика</h4>
+                        <p class="text-sm mt-1">Поймешь, что именно «сломалось» в твоем обмене веществ.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal bg-teal-900/30 border border-teal-500/50 p-6 rounded-xl text-center mb-16">
+                <p class="text-white font-medium text-lg">
+                    🚀 За 7 дней ты не просто «попробуешь», а запустишь процесс жиросжигания и увидишь, как сдувается
+                    «твердый» живот.
+                </p>
+            </div>
+
+            <!-- БЛОК 16: Footer CTA -->
+            <div
+                class="interactive-card bg-gray-900 rounded-2xl p-8 md:p-12 text-center border border-gray-700 relative overflow-hidden reveal">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 to-red-600"></div>
+
+                <h3 class="text-2xl font-bold text-white mb-6">Смотри приглашение ⬇️</h3>
+
+                <!-- Видео (Wistia Player 2) -->
+                <div
+                    class="rounded-xl overflow-hidden border border-gray-700 mb-8 shadow-xl relative aspect-video max-w-2xl mx-auto">
+                    <!-- Замена скриптового плеера на безопасный Iframe, чтобы избежать ошибок CORS/Fetch -->
+                    <iframe src="https://fast.wistia.net/embed/iframe/iu29d1mcpd" title="Video"
+                        allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no"
+                        class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+                </div>
+
+                <p class="text-xl text-white font-bold mb-6">Готов начать? Тогда поехали! 💪</p>
+
+                <a href="https://dgmuk.github.io/pagepr/"
+                    class="cta-glow inline-flex items-center justify-center gap-2 w-full md:w-auto px-10 py-5 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-lg font-bold rounded-xl transition-all transform hover:-translate-y-1">
+                    <span>Записаться на практикум</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 py-10">
+            <div class="grid sm:grid-cols-3 gap-8 mb-8">
+                <!-- Бренд -->
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">🔥</span>
+                        <span class="text-white font-bold">Body Balance</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Научный подход к снижению веса и построению тела мечты.</p>
+                </div>
+                <!-- Соцсети -->
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Мы в соцсетях</h4>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://t.me/BodyBal"
+                            class="flex items-center gap-2 text-sm text-gray-400 hover:text-teal-400 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                            </svg>
+                            Telegram канал
+                        </a>
+                        <a href="https://vkvideo.ru/video391429675_456239157"
+                            class="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.12-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.847 2.455 2.27 4.607 2.862 4.607.22 0 .322-.102.322-.66V10.1c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.15-3.574 2.15-3.574.119-.254.305-.491.745-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z" />
+                            </svg>
+                            ВКонтакте
+                        </a>
+                    </div>
+                </div>
+                <!-- Контакты -->
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Контакты</h4>
+                    <a href="https://t.me/BodyBal"
+                        class="text-sm text-gray-400 hover:text-orange-400 transition-colors">📩 Написать в Telegram</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-xs text-gray-600">© 2026 Body Balance System. Все права защищены.</p>
+                <p class="text-xs text-gray-600">Результаты индивидуальны и зависят от исходных данных.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- КНОПКА НАВЕРХ -->
+    <button id="scrollTopBtn" title="Наверх" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
+
+    <!-- Скрипты -->
+    <script>
+        // --- Калькулятор КБЖУ (с валидацией и анимацией) ---
+        function animateValue(el, end, suffix) {
+            const duration = 800;
+            const start = 0;
+            const startTime = performance.now();
+            const step = (now) => {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                const current = Math.round(start + (end - start) * eased);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        }
+
+        function calculateMacros() {
+            const weight = parseFloat(document.getElementById('calcWeight').value);
+            const maintenance = parseFloat(document.getElementById('calcMaintenance').value);
+            const errorMsg = document.getElementById('errorMsg');
+            const resultsPanel = document.getElementById('resultsPanel');
+
+            // Валидация
+            if (!weight && !maintenance) {
+                errorMsg.textContent = '⚠️ Пожалуйста, заполните оба поля.';
+                errorMsg.classList.remove('hidden');
+                resultsPanel.classList.add('hidden');
+                return;
+            }
+            if (!weight || weight < 30 || weight > 300) {
+                errorMsg.textContent = '⚠️ Укажите корректный вес (от 30 до 300 кг).';
+                errorMsg.classList.remove('hidden');
+                resultsPanel.classList.add('hidden');
+                return;
+            }
+            if (!maintenance || maintenance < 800 || maintenance > 10000) {
+                errorMsg.textContent = '⚠️ Укажите калории поддержки (от 800 до 10 000 ккал).';
+                errorMsg.classList.remove('hidden');
+                resultsPanel.classList.add('hidden');
+                return;
+            }
+
+            errorMsg.classList.add('hidden');
+            resultsPanel.classList.remove('hidden');
+
+            const deficitCals = Math.round(maintenance * 0.8);
+            const proteinG = Math.round(weight * 1.8);
+            const proteinCals = proteinG * 4;
+            const fatG = Math.round(weight * 0.8);
+            const fatCals = fatG * 9;
+            const remainingCals = deficitCals - (proteinCals + fatCals);
+            const carbsG = Math.max(0, Math.round(remainingCals / 4));
+
+            // Counter-анимация
+            animateValue(document.getElementById('resCals'), deficitCals, ' ккал');
+            animateValue(document.getElementById('resProtein'), proteinG, ' г');
+            animateValue(document.getElementById('resFat'), fatG, ' г');
+            animateValue(document.getElementById('resCarbs'), carbsG, ' г');
+
+            // Визуальные бары (% от общей калорийности)
+            const totalG = proteinG + fatG + carbsG;
+            setTimeout(() => {
+                document.getElementById('barProtein').style.width = Math.round((proteinG / totalG) * 100) + '%';
+                document.getElementById('barFat').style.width = Math.round((fatG / totalG) * 100) + '%';
+                document.getElementById('barCarbs').style.width = Math.round((carbsG / totalG) * 100) + '%';
+            }, 100);
+        }
+
+        // --- Копирование результата ---
+        function copyResults() {
+            const cals = document.getElementById('resCals').textContent;
+            const protein = document.getElementById('resProtein').textContent;
+            const fat = document.getElementById('resFat').textContent;
+            const carbs = document.getElementById('resCarbs').textContent;
+            const text = `Мой план КБЖУ:\n🔥 Калории: ${cals}\n🥩 Белки: ${protein}\n🥑 Жиры: ${fat}\n🍚 Углеводы: ${carbs}`;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtnText');
+                btn.textContent = '✅ Скопировано!';
+                setTimeout(() => { btn.textContent = 'Скопировать результат'; }, 2000);
+            }).catch(() => {
+                // fallback для старых браузеров
+                const ta = document.createElement('textarea');
+                ta.value = text; document.body.appendChild(ta);
+                ta.select(); document.execCommand('copy');
+                document.body.removeChild(ta);
+                const btn = document.getElementById('copyBtnText');
+                btn.textContent = '✅ Скопировано!';
+                setTimeout(() => { btn.textContent = 'Скопировать результат'; }, 2000);
+            });
+        }
+
+        // --- Табы (с анимацией) ---
+        function switchTab(tabIndex) {
+            // Кнопки
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-orange-500', 'border-orange-500', 'bg-gray-800');
+                btn.classList.add('text-gray-400', 'border-transparent');
+            });
+            const activeBtn = document.getElementById(`tab${tabIndex}`);
+            activeBtn.classList.remove('text-gray-400', 'border-transparent');
+            activeBtn.classList.add('text-orange-500', 'border-orange-500', 'bg-gray-800');
+
+            // Контент с slide-анимацией
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('active-tab');
+            });
+            const target = document.getElementById(`content${tabIndex}`);
+            target.classList.remove('hidden');
+            // Триггерим reflow для анимации
+            target.offsetHeight;
+            target.classList.add('active-tab');
+
+            // Прогресс-бар
+            const progress = document.getElementById('tabProgress');
+            if (progress) progress.style.width = (tabIndex * 25) + '%';
+        }
+
+        // --- Слайдер кейсов ---
+        function scrollCases(direction) {
+            const slider = document.getElementById('casesSlider');
+            const scrollAmount = 300;
+            slider.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // --- Главная инициализация ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const progressBar = document.getElementById('readingProgress');
+            const stickyNav = document.getElementById('stickyNav');
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const navLinks = document.querySelectorAll('#stickyNav .nav-link');
+            const sections = ['step1', 'step2', 'step3', 'step4', 'step5'];
+
+            // --- Stat counter анимация (IntersectionObserver) ---
+            const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.target);
+                        const suffix = el.dataset.suffix || '';
+                        animateValue(el, target, suffix);
+                        statObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statNumbers.forEach(el => statObserver.observe(el));
+
+            // --- Stagger reveal для списков ---
+            const staggerItems = document.querySelectorAll('.stagger-item');
+            const staggerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const parent = entry.target.closest('.stagger-group') || entry.target.parentElement;
+                        const items = parent.querySelectorAll('.stagger-item');
+                        items.forEach((item, i) => {
+                            setTimeout(() => item.classList.add('visible'), i * 150);
+                        });
+                        staggerObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            staggerItems.forEach(el => staggerObserver.observe(el));
+
+            // --- Dots пагинация для слайдера ---
+            const slider = document.getElementById('casesSlider');
+            const dotsContainer = document.getElementById('sliderDots');
+            const slides = slider.querySelectorAll('.snap-center');
+            const totalSlides = slides.length;
+
+            // Создаём dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Слайд ${i + 1}`);
+                dot.onclick = () => {
+                    slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                };
+                dotsContainer.appendChild(dot);
+            }
+
+            // Обновляем active dot при скролле слайдера
+            const updateDots = () => {
+                const sliderRect = slider.getBoundingClientRect();
+                const center = sliderRect.left + sliderRect.width / 2;
+                let closest = 0;
+                let minDist = Infinity;
+                slides.forEach((slide, i) => {
+                    const slideRect = slide.getBoundingClientRect();
+                    const slideCenter = slideRect.left + slideRect.width / 2;
+                    const dist = Math.abs(slideCenter - center);
+                    if (dist < minDist) { minDist = dist; closest = i; }
+                });
+                dotsContainer.querySelectorAll('.slider-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === closest);
+                });
+            };
+            slider.addEventListener('scroll', updateDots, { passive: true });
+
+            // --- Обработчик скролла (объединённый) ---
+            const onScroll = () => {
+                const scrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight - windowHeight;
+
+                // 1. Прогресс-бар чтения
+                const scrollPercent = Math.min((scrollY / docHeight) * 100, 100);
+                progressBar.style.width = scrollPercent + '%';
+
+                // 2. Sticky навигация
+                if (scrollY > 400) {
+                    stickyNav.classList.add('visible');
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+
+                // 3. Кнопка "Наверх"
+                if (scrollY > 800) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+
+                // 4. Анимации появления секций
+                const elementVisible = 150;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+
+                // 5. Подсветка активного пункта навигации
+                let currentSection = '';
+                sections.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top <= windowHeight / 2 && rect.bottom >= 0) {
+                            currentSection = id;
+                        }
+                    }
+                });
+                navLinks.forEach(link => {
+                    if (link.dataset.section === currentSection) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        });
+    </script>
+</body>
+
+</html>
